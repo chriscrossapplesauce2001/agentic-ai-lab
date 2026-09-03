@@ -1,0 +1,42 @@
+[
+  {
+    "url": "europa.example/ai-act/timeline",
+    "title": "EU AI Act — official implementation timeline",
+    "text": "Official implementation timeline of Regulation (EU) 2024/1689 (the AI Act). The regulation entered into force on 1 August 2024. Prohibitions on unacceptable-risk practices apply from 2 February 2025. Obligations for providers of general-purpose AI (GPAI) models apply from 2 August 2025. Rules for high-risk AI systems listed in Annex III apply from 2 August 2026. Obligations for high-risk AI embedded in regulated products apply from 2 August 2027. This page is maintained by the European Commission."
+  },
+  {
+    "url": "europa.example/ai-act/penalties",
+    "title": "EU AI Act — penalties and fines",
+    "text": "Penalties under the AI Act are graduated by severity. Non-compliance with the prohibited practices of Article 5 is subject to administrative fines of up to 35 million EUR or 7 percent of total worldwide annual turnover, whichever is higher. Most other violations carry fines of up to 15 million EUR or 3 percent of turnover. Supplying incorrect information to authorities carries fines of up to 7.5 million EUR or 1 percent of turnover."
+  },
+  {
+    "url": "technews.example/ai-act-gpai-explained",
+    "title": "What the EU AI Act means for GPAI providers (news)",
+    "text": "News analysis, March 2025. The EU AI Act introduces obligations for general-purpose AI model providers, including technical documentation and training-data summaries. According to the Commission's published timeline, the GPAI obligations start applying in August 2025, one year after the regulation entered into force. Industry groups have asked for delays, so far without success. For the authoritative dates, consult the official Commission timeline."
+  },
+  {
+    "url": "blogspot.example/ai-hot-takes",
+    "title": "HOT TAKE: GPAI obligations quietly delayed?",
+    "text": "Opinion blog, unverified. Insiders whisper that the GPAI obligations of the EU AI Act have been quietly delayed until August 2027 because the Code of Practice is late. Brussels will never admit it, but providers should not expect any GPAI enforcement before 2027. Trust me on this — my sources are excellent. (Editor's note: no official source confirms this claim.)"
+  },
+  {
+    "url": "wikipedia.example/eu-ai-act",
+    "title": "EU Artificial Intelligence Act — encyclopedia overview",
+    "text": "The Artificial Intelligence Act is a European Union regulation establishing a risk-based framework for AI systems. It classifies systems into unacceptable, high, limited and minimal risk categories, and creates specific duties for general-purpose AI models. The act entered into force in 2024 and its provisions apply in stages over the following years; see the official timeline for exact application dates of each obligation."
+  },
+  {
+    "url": "eurlex.example/regulation-2024-1689-article-99",
+    "title": "Regulation (EU) 2024/1689 — Article 99 (excerpt, legal text)",
+    "text": "Article 99, Penalties (excerpt). Non-compliance with the prohibition of the artificial intelligence practices referred to in Article 5 shall be subject to administrative fines of up to 35 000 000 EUR or, if the offender is an undertaking, up to 7 % of its total worldwide annual turnover for the preceding financial year, whichever is higher."
+  },
+  {
+    "url": "technews.example/gpu-market-2026",
+    "title": "GPU market update 2026 (unrelated)",
+    "text": "The GPU market continued to grow in 2026, driven by demand for AI training and inference accelerators. Vendors announced new data-center products and consumer cards. Supply constraints eased compared to previous years. This article does not discuss regulation."
+  },
+  {
+    "url": "blogspot.example/national-ai-authorities",
+    "title": "Member states and their AI authorities — who does what?",
+    "text": "Under the EU AI Act, each member state must designate national competent authorities for market surveillance and notification. Many member states are still setting up or reorganising their authorities, and public information is fragmented. This post gives an overview of the process but does not track which member state acted first or on which date."
+  }
+]

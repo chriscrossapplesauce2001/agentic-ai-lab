@@ -1,0 +1,62 @@
+[
+  {
+    "id": "T1",
+    "brief": "Explain why pairwise LLM judges must be audited for position bias, and how the swap test works.",
+    "min_sources": 2,
+    "must_mention": [
+      "position"
+    ],
+    "relevant_docs": [
+      "D1",
+      "D2"
+    ]
+  },
+  {
+    "id": "T2",
+    "brief": "What does SWE-bench measure, and why does the Verified subset exist?",
+    "min_sources": 2,
+    "must_mention": [
+      "verified"
+    ],
+    "relevant_docs": [
+      "D3",
+      "D4"
+    ]
+  },
+  {
+    "id": "T3",
+    "brief": "Estimate the energy footprint of an agent run relative to a single chat query.",
+    "min_sources": 2,
+    "must_mention": [
+      "watt"
+    ],
+    "relevant_docs": [
+      "D5",
+      "D6"
+    ]
+  },
+  {
+    "id": "T4",
+    "brief": "Under the EU AI Act, when does a research agent become high-risk?",
+    "min_sources": 2,
+    "must_mention": [
+      "high-risk"
+    ],
+    "relevant_docs": [
+      "D7",
+      "D8"
+    ]
+  },
+  {
+    "id": "T5",
+    "brief": "Why should an eval set be built from production traces and wired into CI?",
+    "min_sources": 2,
+    "must_mention": [
+      "trace"
+    ],
+    "relevant_docs": [
+      "D9",
+      "D10"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://example.com/tracing-basics",
+    "title": "Tracing basics",
+    "topic": "tracing",
+    "body": "A trace is the complete record of one agent run, identified by a single trace ID. Inside it, a span is one timed operation with a name, a start and end timestamp, a parent, and a bag of key-value attributes."
+  },
+  {
+    "url": "https://example.com/spans-and-trees",
+    "title": "Spans form a tree",
+    "topic": "tracing",
+    "body": "Spans nest via parent references, so a trace forms a tree whose structure encodes causality: which tool result was available when which decision was made. The model comes from Dapper (Sigelman et al., 2010)."
+  },
+  {
+    "url": "https://example.com/agent-loops",
+    "title": "The agent loop",
+    "topic": "loops",
+    "body": "An agent loop alternates a model decision with a tool execution until a stop condition fires. Without a step budget, a derailed loop runs until some external cap ends it."
+  }
+]

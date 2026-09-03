@@ -1,0 +1,66 @@
+{
+  "rubric": [
+    {
+      "run_id": "final-T1-t1",
+      "human": 5
+    },
+    {
+      "run_id": "final-T2-t1",
+      "human": 5
+    },
+    {
+      "run_id": "final-T3-t1",
+      "human": 4
+    },
+    {
+      "run_id": "final-T4-t1",
+      "human": 5
+    },
+    {
+      "run_id": "final-T5-t1",
+      "human": 4
+    },
+    {
+      "run_id": "baseline-T1-t1",
+      "human": 4
+    },
+    {
+      "run_id": "baseline-T2-t1",
+      "human": 2
+    },
+    {
+      "run_id": "baseline-T3-t1",
+      "human": 4
+    },
+    {
+      "run_id": "baseline-T4-t1",
+      "human": 4
+    },
+    {
+      "run_id": "baseline-T5-t1",
+      "human": 2
+    }
+  ],
+  "pairwise": [
+    {
+      "task_id": "T1",
+      "human": "tie"
+    },
+    {
+      "task_id": "T2",
+      "human": "A"
+    },
+    {
+      "task_id": "T3",
+      "human": "tie"
+    },
+    {
+      "task_id": "T4",
+      "human": "tie"
+    },
+    {
+      "task_id": "T5",
+      "human": "A"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "vendor_essay",
+    "title": "Building Effective Agents",
+    "url": "https://example-vendor.com/research/building-effective-agents",
+    "date": "2024-12",
+    "source_type": "vendor essay",
+    "text": "The most successful agent implementations we see use simple, composable patterns rather than complex frameworks. Find the simplest solution possible, and only increase complexity when it demonstrably improves outcomes. Start by using LLM APIs directly: many patterns are a few lines of code. If you do use a framework, make sure you understand the code under the hood — wrong assumptions about what is beneath are a common source of error. Fixed, composable workflows cover most production cases before a dynamic agent is justified."
+  },
+  {
+    "id": "langgraph_docs",
+    "title": "LangGraph Concepts: State, Persistence and Human-in-the-Loop",
+    "url": "https://langgraph.example-docs.dev/concepts/persistence",
+    "date": "2025-08",
+    "source_type": "framework docs",
+    "text": "A graph is defined by a typed state schema, nodes that return state updates, and edges — including conditional edges that route on the current state. Reducers such as add_messages declare how updates merge into state. A checkpointer persists the full state after every node, keyed by thread_id: kill the process and invoke again with the same thread to resume, rewind to an earlier checkpoint and replay, or interrupt before a node and wait for human approval."
+  },
+  {
+    "id": "ripout_blog",
+    "title": "Why we removed our agent framework after six months",
+    "url": "https://engineering.example-startup.io/removing-our-agent-framework",
+    "date": "2025-05",
+    "source_type": "engineering blog",
+    "text": "The demo took a day; the incidents took our nights. Stack traces crossed a graph runtime, callback managers and serializers before touching our code. A minor version bump changed an embedded prompt template and our agent started looping — the diff was in someone else's repository. We rewrote the core as roughly 120 lines of plain Python with a tool registry, exponential backoff and JSON checkpoints. We lost replay and per-node tracing; we regained the ability to read our own system."
+  },
+  {
+    "id": "crew_post",
+    "title": "Ship a research crew in fifteen minutes",
+    "url": "https://blog.example-crews.ai/ship-a-research-crew",
+    "date": "2025-03",
+    "source_type": "marketing blog",
+    "text": "Define a researcher, an analyst and a writer — each with a role, a goal and a backstory — assign tasks, pick a sequential or manager-led process, and your multi-agent research pipeline is live before your coffee cools. Our scaffolding writes the coordination prompts for you, so you never touch a system prompt. Teams report shipping demos in an afternoon. Why write a loop when a crew can play the roles?"
+  },
+  {
+    "id": "forum_pip",
+    "title": "Agent started looping after a routine dependency update",
+    "url": "https://forum.example-devs.net/t/agent-looping-after-update/8151",
+    "date": "2025-09",
+    "source_type": "forum thread",
+    "text": "Nothing in our repo changed, CI was green, and production agents began re-answering finished tasks. Three days of bisecting later: the framework's new release had rephrased its internal stop heuristic and role scaffolding. Fixes that worked for us: pin every dependency, log the final rendered prompt — the literal tokens sent — on every call so behaviour is diffable across versions, and treat framework upgrades as changes to your program that need review and regression tests."
+  },
+  {
+    "id": "smol_docs",
+    "title": "smolagents: a thousand readable lines",
+    "url": "https://docs.example-hub.co/smolagents/index",
+    "date": "2025-06",
+    "source_type": "framework docs",
+    "text": "The core of the library is about a thousand lines of code you can actually read in a sitting. Its central bet: agents act by writing Python code snippets rather than emitting JSON tool calls — following the CodeAct result (Wang et al., 2024), which reported up to roughly twenty percent higher task success. Persistence is deliberately minimal. If you outgrow us, the exit is short: the loop is small enough to reimplement yourself."
+  },
+  {
+    "id": "hundred_lines",
+    "title": "A hundred lines of agent in production",
+    "url": "https://engineering.example-tools.dev/hundred-line-agent",
+    "date": "2025-04",
+    "source_type": "engineering blog",
+    "text": "Our production agent is a dictionary of tools, an eight-line retry wrapper with exponential backoff, and a while-loop that snapshots its full state to JSON after every step. Kill minus nine the process and a ten-line resume function continues the run; the model is stateless and never notices. What we do not have: checkpoint history with replay, thread management for concurrent runs, or suspension for human approval. For one loop and three tools, we have not missed them yet."
+  },
+  {
+    "id": "survey_families",
+    "title": "Five families of agent frameworks: a field guide",
+    "url": "https://research.example-lab.org/agent-framework-field-guide",
+    "date": "2025-07",
+    "source_type": "survey",
+    "text": "Every framework family embodies a belief about what an agent is: a typed state graph with conditional edges and checkpointing; a team of role-players; an open-ended conversation whose control flow emerges from dialogue; a code-writing process; or a vendor's packaged loop with handoffs, guardrails and sessions. Strip the vocabulary and all five wrap the same reason-act-observe loop; they differ in what they make explicit, what they hide, and where your run state lives — including whether it lives with a vendor."
+  }
+]

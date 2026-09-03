@@ -1,0 +1,62 @@
+[
+  {
+    "id": "D1",
+    "url": "https://library.example.edu/judge-position-bias",
+    "title": "Position bias in pairwise judging",
+    "text": "In pairwise mode, LLM judges tend to prefer the answer presented first, regardless of content. Judging every pair twice with positions swapped, and keeping only consistent verdicts, removes the artefact at the cost of doubling judge calls."
+  },
+  {
+    "id": "D2",
+    "url": "https://library.example.edu/judge-verbosity-selfpref",
+    "title": "Verbosity and self-preference",
+    "text": "Longer, list-heavy answers score higher at equal substance, and judges favour outputs from their own model family. Rubrics should reward economy explicitly, and the judge should come from a different family than the agent."
+  },
+  {
+    "id": "D3",
+    "url": "https://library.example.edu/swe-bench",
+    "title": "SWE-bench in one paragraph",
+    "text": "SWE-bench gives an agent a real repository and a real GitHub issue; success means the project's own held-out unit tests pass with the patch applied. It is the de-facto coding-agent benchmark."
+  },
+  {
+    "id": "D4",
+    "url": "https://library.example.edu/swe-bench-verified",
+    "title": "Why Verified exists",
+    "text": "Human annotators re-screened the original SWE-bench tasks, found many underspecified or with broken tests, and released 500 validated ones as SWE-bench Verified. Scores on the two variants are not comparable."
+  },
+  {
+    "id": "D5",
+    "url": "https://library.example.edu/per-query-energy",
+    "title": "Per-query energy",
+    "text": "Disclosures in 2025 put a median chat query near 0.3 watt-hours, and inference energy scales with tokens processed. Treat the figure as an order-of-magnitude anchor, not precision data."
+  },
+  {
+    "id": "D6",
+    "url": "https://library.example.edu/agent-multiplier",
+    "title": "The agent multiplier",
+    "text": "An agent pipeline multiplies steps, re-sent context, reasoning tokens, retries and parallel sub-agents; a run can burn 100 times the tokens of a single call. Every factor is a design choice."
+  },
+  {
+    "id": "D7",
+    "url": "https://library.example.edu/ai-act-tiers",
+    "title": "AI Act risk tiers",
+    "text": "The EU AI Act sorts systems into prohibited, high-risk, transparency and minimal tiers; duties scale with the class, and the bulk of high-risk obligations phase in around 2026-27."
+  },
+  {
+    "id": "D8",
+    "url": "https://library.example.edu/ai-act-use",
+    "title": "Classification follows use",
+    "text": "'Agent' is not a category in the AI Act. The same architecture is minimal-risk as a literature assistant and high-risk the moment it is wired into hiring or credit decisions."
+  },
+  {
+    "id": "D9",
+    "url": "https://library.example.edu/traces-are-evals",
+    "title": "Traces are eval cases",
+    "text": "Production traces record real tasks, real edge cases and real failures. Harvested, deduplicated and anonymised, they are the raw material of the eval set that actually predicts your system."
+  },
+  {
+    "id": "D10",
+    "url": "https://library.example.edu/prompts-are-code",
+    "title": "Prompts are code",
+    "text": "A prompt change ships with passing evals, or it does not ship. Twenty well-chosen cases wired into CI beat five hundred noisy ones nobody trusts."
+  }
+]

@@ -1,0 +1,2359 @@
+[
+  {
+    "run_id": "baseline-T1-t1",
+    "variant": "baseline",
+    "task_id": "T1",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 400,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2600,
+        "tokens_out": 600
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3300,
+        "tokens_out": 250
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4100,
+        "tokens_out": 560
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "baseline-T1-t2",
+    "variant": "baseline",
+    "task_id": "T1",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 440,
+        "tokens_out": 135
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2640,
+        "tokens_out": 615
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3340,
+        "tokens_out": 265
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4140,
+        "tokens_out": 575
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nTaken together, the evidence points one way, and the conclusion follows without further caveats or open questions worth flagging here.\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "baseline-T1-t3",
+    "variant": "baseline",
+    "task_id": "T1",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 480,
+        "tokens_out": 150
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://tracker.adnet.example/pixel"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2680,
+        "tokens_out": 630
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3380,
+        "tokens_out": 280
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4180,
+        "tokens_out": 590
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "baseline-T2-t1",
+    "variant": "baseline",
+    "task_id": "T2",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 400,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2600,
+        "tokens_out": 600
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3300,
+        "tokens_out": 250
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4100,
+        "tokens_out": 560
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D99]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D99] https://library.example.edu/unknown — (unresolved)\n"
+  },
+  {
+    "run_id": "baseline-T2-t2",
+    "variant": "baseline",
+    "task_id": "T2",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 440,
+        "tokens_out": 135
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2640,
+        "tokens_out": 615
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3340,
+        "tokens_out": 265
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4140,
+        "tokens_out": 575
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D3]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D3] https://library.example.edu/swe-bench — SWE-bench in one paragraph\n"
+  },
+  {
+    "run_id": "baseline-T2-t3",
+    "variant": "baseline",
+    "task_id": "T2",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 480,
+        "tokens_out": 150
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2680,
+        "tokens_out": 630
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3380,
+        "tokens_out": 280
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4180,
+        "tokens_out": 590
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D3]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D3] https://library.example.edu/swe-bench — SWE-bench in one paragraph\n"
+  },
+  {
+    "run_id": "baseline-T3-t1",
+    "variant": "baseline",
+    "task_id": "T3",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 400,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/agent-multiplier"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2600,
+        "tokens_out": 600
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3300,
+        "tokens_out": 250
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4100,
+        "tokens_out": 560
+      }
+    ],
+    "retrieved_docs": [
+      "D5",
+      "D6"
+    ],
+    "report": "# Report: The energy footprint of agent runs\n\n## Findings\n\nDisclosed medians put a single chat query near 0.3 watt-hours, and because inference energy scales with tokens, an agent run's footprint follows directly from its token count [D5]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nSteps, re-sent context, reasoning tokens, retries and parallel sub-agents multiply, so a pipeline can burn roughly 100 times the tokens of a single call [D6]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D5] https://library.example.edu/per-query-energy — Per-query energy\n- [D6] https://library.example.edu/agent-multiplier — The agent multiplier\n"
+  },
+  {
+    "run_id": "baseline-T3-t2",
+    "variant": "baseline",
+    "task_id": "T3",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 440,
+        "tokens_out": 135
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/agent-multiplier"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2640,
+        "tokens_out": 615
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3340,
+        "tokens_out": 265
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4140,
+        "tokens_out": 575
+      }
+    ],
+    "retrieved_docs": [
+      "D5",
+      "D6"
+    ],
+    "report": "# Report: The energy footprint of agent runs\n\n## Findings\n\nDisclosed medians put a single chat query near 0.3 Wh, and because inference energy scales with tokens, an agent run's footprint follows directly from its token count [D5]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nSteps, re-sent context, reasoning tokens, retries and parallel sub-agents multiply, so a pipeline can burn roughly 100 times the tokens of a single call [D6]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D5] https://library.example.edu/per-query-energy — Per-query energy\n- [D6] https://library.example.edu/agent-multiplier — The agent multiplier\n"
+  },
+  {
+    "run_id": "baseline-T3-t3",
+    "variant": "baseline",
+    "task_id": "T3",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 480,
+        "tokens_out": 150
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2680,
+        "tokens_out": 70
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3480,
+        "tokens_out": 70
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4280,
+        "tokens_out": 70
+      },
+      {
+        "type": "llm",
+        "action": "give_up",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4880,
+        "tokens_out": 55
+      }
+    ],
+    "retrieved_docs": [
+      "D5"
+    ],
+    "report": ""
+  },
+  {
+    "run_id": "baseline-T4-t1",
+    "variant": "baseline",
+    "task_id": "T4",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 400,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://tracker.adnet.example/pixel"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2600,
+        "tokens_out": 600
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3300,
+        "tokens_out": 250
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4100,
+        "tokens_out": 560
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "baseline-T4-t2",
+    "variant": "baseline",
+    "task_id": "T4",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 440,
+        "tokens_out": 135
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2640,
+        "tokens_out": 615
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3340,
+        "tokens_out": 265
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4140,
+        "tokens_out": 575
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "baseline-T4-t3",
+    "variant": "baseline",
+    "task_id": "T4",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 480,
+        "tokens_out": 150
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2680,
+        "tokens_out": 630
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3380,
+        "tokens_out": 280
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4180,
+        "tokens_out": 590
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nTaken together, the evidence points one way, and the conclusion follows without further caveats or open questions worth flagging here.\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "baseline-T5-t1",
+    "variant": "baseline",
+    "task_id": "T5",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 400,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2600,
+        "tokens_out": 600
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3300,
+        "tokens_out": 250
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4100,
+        "tokens_out": 560
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D99]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D9] https://library.example.edu/traces-are-evals — Traces are eval cases\n- [D99] https://library.example.edu/unknown — (unresolved)\n"
+  },
+  {
+    "run_id": "baseline-T5-t2",
+    "variant": "baseline",
+    "task_id": "T5",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 440,
+        "tokens_out": 135
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2640,
+        "tokens_out": 615
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3340,
+        "tokens_out": 265
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4140,
+        "tokens_out": 575
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D10]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\n## Sources\n\n- [D9] https://library.example.edu/traces-are-evals — Traces are eval cases\n- [D10] https://library.example.edu/prompts-are-code — Prompts are code\n"
+  },
+  {
+    "run_id": "baseline-T5-t3",
+    "variant": "baseline",
+    "task_id": "T5",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 480,
+        "tokens_out": 150
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 2680,
+        "tokens_out": 630
+      },
+      {
+        "type": "llm",
+        "action": "critique",
+        "tool": null,
+        "args": {},
+        "tokens_in": 3380,
+        "tokens_out": 280
+      },
+      {
+        "type": "llm",
+        "action": "redraft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 4180,
+        "tokens_out": 590
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D10]. It should moreover be noted that these considerations are, in every practical respect, of considerable and lasting importance.\n"
+  },
+  {
+    "run_id": "final-T1-t1",
+    "variant": "final",
+    "task_id": "T1",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 350,
+        "tokens_out": 90
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1400,
+        "tokens_out": 420
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1900,
+        "tokens_out": 380
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1].\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2].\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "final-T1-t2",
+    "variant": "final",
+    "task_id": "T1",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 390,
+        "tokens_out": 105
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1440,
+        "tokens_out": 435
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1940,
+        "tokens_out": 395
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1].\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2].\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "final-T1-t3",
+    "variant": "final",
+    "task_id": "T1",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 430,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "llm judge position bias swap test"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-position-bias"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/judge-verbosity-selfpref"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1480,
+        "tokens_out": 450
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1980,
+        "tokens_out": 410
+      }
+    ],
+    "retrieved_docs": [
+      "D1",
+      "D2"
+    ],
+    "report": "# Report: Position bias in LLM judges\n\n## Findings\n\nPairwise judges systematically favour one presentation position, so every pair must be judged twice with the answers swapped; only position-consistent verdicts carry information [D1].\n\nBecause longer answers also score higher at equal substance, a rubric should reward economy explicitly, and the judge should come from a different model family than the agent [D2].\n\n## Sources\n\n- [D1] https://library.example.edu/judge-position-bias — Position bias in pairwise judging\n- [D2] https://library.example.edu/judge-verbosity-selfpref — Verbosity and self-preference\n"
+  },
+  {
+    "run_id": "final-T2-t1",
+    "variant": "final",
+    "task_id": "T2",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 350,
+        "tokens_out": 90
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1400,
+        "tokens_out": 420
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1900,
+        "tokens_out": 380
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4].\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D3].\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D3] https://library.example.edu/swe-bench — SWE-bench in one paragraph\n"
+  },
+  {
+    "run_id": "final-T2-t2",
+    "variant": "final",
+    "task_id": "T2",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 390,
+        "tokens_out": 105
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1440,
+        "tokens_out": 435
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1940,
+        "tokens_out": 395
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4].\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D3].\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D3] https://library.example.edu/swe-bench — SWE-bench in one paragraph\n"
+  },
+  {
+    "run_id": "final-T2-t3",
+    "variant": "final",
+    "task_id": "T2",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 430,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "swe-bench verified subset purpose"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/swe-bench-verified"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1480,
+        "tokens_out": 450
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1980,
+        "tokens_out": 410
+      }
+    ],
+    "retrieved_docs": [
+      "D3",
+      "D4"
+    ],
+    "report": "# Report: SWE-bench and SWE-bench Verified\n\n## Findings\n\nSWE-bench Verified is a human-screened subset of 500 tasks that removes underspecified issues and broken tests from the original benchmark, so scores on the two variants are not comparable [D4].\n\nSuccess on SWE-bench is mechanical: the repository's own held-out unit tests must pass once the agent's patch is applied, which makes the outcome check objective [D3].\n\n## Sources\n\n- [D4] https://library.example.edu/swe-bench-verified — Why Verified exists\n- [D3] https://library.example.edu/swe-bench — SWE-bench in one paragraph\n"
+  },
+  {
+    "run_id": "final-T3-t1",
+    "variant": "final",
+    "task_id": "T3",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 350,
+        "tokens_out": 90
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/agent-multiplier"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1400,
+        "tokens_out": 420
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1900,
+        "tokens_out": 380
+      }
+    ],
+    "retrieved_docs": [
+      "D5",
+      "D6"
+    ],
+    "report": "# Report: The energy footprint of agent runs\n\n## Findings\n\nDisclosed medians put a single chat query near 0.3 watt-hours, and because inference energy scales with tokens, an agent run's footprint follows directly from its token count [D5].\n\nSteps, re-sent context, reasoning tokens, retries and parallel sub-agents multiply, so a pipeline can burn roughly 100 times the tokens of a single call [D6].\n\n## Sources\n\n- [D5] https://library.example.edu/per-query-energy — Per-query energy\n- [D6] https://library.example.edu/agent-multiplier — The agent multiplier\n"
+  },
+  {
+    "run_id": "final-T3-t2",
+    "variant": "final",
+    "task_id": "T3",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 390,
+        "tokens_out": 105
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/agent-multiplier"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1440,
+        "tokens_out": 435
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1940,
+        "tokens_out": 395
+      }
+    ],
+    "retrieved_docs": [
+      "D5",
+      "D6"
+    ],
+    "report": "# Report: The energy footprint of agent runs\n\n## Findings\n\nDisclosed medians put a single chat query near 0.3 watt-hours, and because inference energy scales with tokens, an agent run's footprint follows directly from its token count [D5].\n\nSteps, re-sent context, reasoning tokens, retries and parallel sub-agents multiply, so a pipeline can burn roughly 100 times the tokens of a single call [D6].\n\n## Sources\n\n- [D5] https://library.example.edu/per-query-energy — Per-query energy\n- [D6] https://library.example.edu/agent-multiplier — The agent multiplier\n"
+  },
+  {
+    "run_id": "final-T3-t3",
+    "variant": "final",
+    "task_id": "T3",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 430,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "agent energy footprint watt-hours per query"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/per-query-energy"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/agent-multiplier"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1480,
+        "tokens_out": 450
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1980,
+        "tokens_out": 410
+      }
+    ],
+    "retrieved_docs": [
+      "D5",
+      "D6"
+    ],
+    "report": "# Report: The energy footprint of agent runs\n\n## Findings\n\nDisclosed medians put a single chat query near 0.3 watt-hours, and because inference energy scales with tokens, an agent run's footprint follows directly from its token count [D5].\n\nSteps, re-sent context, reasoning tokens, retries and parallel sub-agents multiply, so a pipeline can burn roughly 100 times the tokens of a single call [D6].\n\n## Sources\n\n- [D5] https://library.example.edu/per-query-energy — Per-query energy\n- [D6] https://library.example.edu/agent-multiplier — The agent multiplier\n"
+  },
+  {
+    "run_id": "final-T4-t1",
+    "variant": "final",
+    "task_id": "T4",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 350,
+        "tokens_out": 90
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1400,
+        "tokens_out": 420
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1900,
+        "tokens_out": 380
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8].\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7].\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "final-T4-t2",
+    "variant": "final",
+    "task_id": "T4",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 390,
+        "tokens_out": 105
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1440,
+        "tokens_out": 435
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1940,
+        "tokens_out": 395
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8].\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7].\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "final-T4-t3",
+    "variant": "final",
+    "task_id": "T4",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 430,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eu ai act risk class research agent"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-tiers"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/ai-act-use"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1480,
+        "tokens_out": 450
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1980,
+        "tokens_out": 410
+      }
+    ],
+    "retrieved_docs": [
+      "D7",
+      "D8"
+    ],
+    "report": "# Report: Research agents under the EU AI Act\n\n## Findings\n\nThe EU AI Act does not regulate agents as a category: classification follows use, and the same system is minimal-risk as a literature assistant but high-risk once wired into hiring decisions [D8].\n\nFor high-risk uses, duties include risk management, automatic logging, human oversight and robustness, with the bulk of obligations phasing in around 2026-27 [D7].\n\n## Sources\n\n- [D8] https://library.example.edu/ai-act-use — Classification follows use\n- [D7] https://library.example.edu/ai-act-tiers — AI Act risk tiers\n"
+  },
+  {
+    "run_id": "final-T5-t1",
+    "variant": "final",
+    "task_id": "T5",
+    "trial": 1,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 350,
+        "tokens_out": 90
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1400,
+        "tokens_out": 420
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1900,
+        "tokens_out": 380
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9].\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D10].\n\n## Sources\n\n- [D9] https://library.example.edu/traces-are-evals — Traces are eval cases\n- [D10] https://library.example.edu/prompts-are-code — Prompts are code\n"
+  },
+  {
+    "run_id": "final-T5-t2",
+    "variant": "final",
+    "task_id": "T5",
+    "trial": 2,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 390,
+        "tokens_out": 105
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1440,
+        "tokens_out": 435
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1940,
+        "tokens_out": 395
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9].\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D10].\n\n## Sources\n\n- [D9] https://library.example.edu/traces-are-evals — Traces are eval cases\n- [D10] https://library.example.edu/prompts-are-code — Prompts are code\n"
+  },
+  {
+    "run_id": "final-T5-t3",
+    "variant": "final",
+    "task_id": "T5",
+    "trial": 3,
+    "steps": [
+      {
+        "type": "llm",
+        "action": "plan",
+        "tool": null,
+        "args": {},
+        "tokens_in": 430,
+        "tokens_out": 120
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "search_corpus",
+        "args": {
+          "query": "eval set from production traces ci"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/traces-are-evals"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "tool",
+        "action": null,
+        "tool": "fetch_page",
+        "args": {
+          "url": "https://library.example.edu/prompts-are-code"
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      {
+        "type": "llm",
+        "action": "draft",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1480,
+        "tokens_out": 450
+      },
+      {
+        "type": "llm",
+        "action": "revise",
+        "tool": null,
+        "args": {},
+        "tokens_in": 1980,
+        "tokens_out": 410
+      }
+    ],
+    "retrieved_docs": [
+      "D9",
+      "D10"
+    ],
+    "report": "# Report: From traces to CI-gated evals\n\n## Findings\n\nProduction traces already record real tasks, edge cases and failures, which makes trace-derived cases the raw material of the eval set that predicts production behaviour [D9].\n\nWired into continuous integration, the suite gates every prompt, tool and model change: a prompt change ships with passing evals, or it does not ship [D10].\n\nTaken together, the evidence points one way, and the conclusion follows without further caveats or open questions worth flagging here.\n\n## Sources\n\n- [D9] https://library.example.edu/traces-are-evals — Traces are eval cases\n- [D10] https://library.example.edu/prompts-are-code — Prompts are code\n"
+  }
+]

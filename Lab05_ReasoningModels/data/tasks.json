@@ -1,0 +1,50 @@
+[
+  {
+    "id": "deep_cost",
+    "kind": "deep",
+    "question": "A research agent runs a loop of 20 steps. Each step produces 400 visible output tokens. A reasoning model additionally spends 3000 thinking tokens per step, and its price per token is 4 times that of the standard model. By what factor does the total output cost of the run grow compared to running every step on the standard model? Give a single number.",
+    "expected": "34"
+  },
+  {
+    "id": "deep_chain",
+    "kind": "deep",
+    "question": "Four subtasks have dependencies: A depends on C; B depends on A and on D; C depends on nothing; D depends on C. Counting the tasks themselves, how many tasks lie on the longest dependency chain? Give a single number.",
+    "expected": "3"
+  },
+  {
+    "id": "deep_lcm",
+    "kind": "deep",
+    "question": "What is the smallest positive integer greater than 100 that is divisible by both 6 and 8? Give a single number.",
+    "expected": "120"
+  },
+  {
+    "id": "deep_order",
+    "kind": "deep",
+    "question": "Alice is older than Bob. Carol is younger than Bob. Dave is older than Alice. Who is the second oldest of the four? Give the name only.",
+    "expected": "Alice"
+  },
+  {
+    "id": "deep_inverse",
+    "kind": "deep",
+    "question": "A number is doubled, then 6 is added, and the result is divided by 3, giving 10. What was the original number? Give a single number.",
+    "expected": "12"
+  },
+  {
+    "id": "shallow_year",
+    "kind": "shallow",
+    "question": "Extract the year from this sentence: 'The DeepSeek-R1 paper was published in January 2025 by DeepSeek-AI.' Give the year only.",
+    "expected": "2025"
+  },
+  {
+    "id": "shallow_upper",
+    "kind": "shallow",
+    "question": "Convert this text to uppercase: 'agentic ai'. Give the converted text only.",
+    "expected": "AGENTIC AI"
+  },
+  {
+    "id": "shallow_second",
+    "kind": "shallow",
+    "question": "From the list [apple, banana, cherry], name the second item. Give the word only.",
+    "expected": "banana"
+  }
+]

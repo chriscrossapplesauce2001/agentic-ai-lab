@@ -1,0 +1,2 @@
+{"span_id": "sc38da854", "parent_id": null, "trace_id": "trace-36d0b8d5", "name": "agent_run", "kind": "run", "start_ms": 0.0016689300537109375, "end_ms": 0.0057220458984375, "attributes": {"task": "contact [REDACTED:email] for the dataset"}}
+{"span_id": "s644b08eb", "parent_id": "sc38da854", "trace_id": "trace-36d0b8d5", "name": "fetch_page", "kind": "tool", "start_ms": 0.004291534423828125, "end_ms": 0.0054836273193359375, "attributes": {"args": {"url": "https://example.com/x"}, "result": "Please email [REDACTED:email] and use key [REDACTED:api_key]", "error": null}}

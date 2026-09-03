@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://labnet.example.org/zephyr7-overview",
+    "topic": "zephyr7",
+    "title": "The ZEPHYR-7 planning benchmark",
+    "body": "ZEPHYR-7 is a synthetic benchmark of 7 multi-step planning tasks introduced by the fictional Aurora Lab in 2025. Each task requires an agent to decompose a goal into an ordered plan and execute it in a simulated warehouse. Scores are reported as pass@1 over 200 seeds. The benchmark ships with a deterministic checker, so success is a binary, external signal rather than a model judgement."
+  },
+  {
+    "url": "https://labnet.example.org/zephyr7-results",
+    "topic": "zephyr7",
+    "title": "ZEPHYR-7 leaderboard, Q1 2025",
+    "body": "On ZEPHYR-7, a single-agent baseline scores 61% pass@1. A supervisor-workers team of four agents scores 74% pass@1 but uses about 12 times the tokens. A preliminary internal run, on a small sample of 20 seeds, suggested a critic loop lifts the single agent to roughly 69%; the authors caution this number is not yet significant."
+  },
+  {
+    "url": "https://labnet.example.org/zephyr7-cost",
+    "topic": "zephyr7",
+    "title": "ZEPHYR-7 cost notes",
+    "body": "The ZEPHYR-7 authors report that most of the multi-agent gain tracks total tokens spent, not the number of agents as such. They recommend a single agent plus one critic as the best cost-adjusted configuration on this benchmark, at about 1.6 times the single-agent token cost."
+  },
+  {
+    "url": "https://labnet.example.org/halcyon-design",
+    "topic": "halcyon",
+    "title": "HALCYON: a partitioned agent memory store",
+    "body": "HALCYON is a fictional memory store for multi-agent systems. Its central idea is partitioned state: each worker owns a disjoint slice of the store, so parallel writers never touch the same key. A single merging owner integrates slices at the end. This design exists to prevent shared-state races between parallel agents."
+  },
+  {
+    "url": "https://labnet.example.org/halcyon-eval",
+    "topic": "halcyon",
+    "title": "HALCYON evaluation notes",
+    "body": "In a controlled test, an unpartitioned baseline produced a self-contradicting merged document in 3 of 10 parallel runs. HALCYON's partitioned scheme produced zero contradictions in the same 10 runs. The authors note the sample is small and call for a larger study before drawing strong conclusions."
+  },
+  {
+    "url": "https://labnet.example.org/halcyon-limits",
+    "topic": "halcyon",
+    "title": "HALCYON limitations",
+    "body": "Partitioning HALCYON requires knowing the write-set of each worker in advance. When subtasks are tightly coupled and cannot be cleanly partitioned, HALCYON falls back to a single merging owner, which serialises writes and removes the parallelism benefit. The authors are explicit that HALCYON does not help tightly coupled work."
+  },
+  {
+    "url": "https://labnet.example.org/corvus-protocol",
+    "topic": "corvus",
+    "title": "CORVUS: a source-grounded critic protocol",
+    "body": "CORVUS is a fictional critic protocol. The critic runs in a fresh context and sees only the draft and the list of retrieved sources, never the writer's reasoning. It returns a verdict (pass or revise) plus a list of concrete issues: every claim that no source supports, and every required section that is missing."
+  },
+  {
+    "url": "https://labnet.example.org/corvus-results",
+    "topic": "corvus",
+    "title": "CORVUS grounding results",
+    "body": "With CORVUS, the share of unsupported claims in generated reports fell from 22% to 6% after two revision rounds. Token cost rose by about 55%. The authors stress that the gain depends entirely on giving the critic the real sources; a source-free critic produced no measurable improvement in their runs."
+  },
+  {
+    "url": "https://labnet.example.org/corvus-caveats",
+    "topic": "corvus",
+    "title": "CORVUS caveats",
+    "body": "CORVUS catches unsupported and missing claims but not subtle reasoning errors the model itself cannot detect. The authors align this with the wider finding that self-critique catches what a model knows but did not apply, never what it does not know. External ground truth, here the source list, is what makes the critic useful."
+  }
+]

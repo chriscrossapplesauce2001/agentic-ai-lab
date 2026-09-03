@@ -1,0 +1,80 @@
+[
+  {
+    "question": "How many dimensions do AURORA's embedding vectors have?",
+    "answerable": true,
+    "gold_doc": "embedding_service",
+    "gold_phrase": "768"
+  },
+  {
+    "question": "What is the name of AURORA's drafting module?",
+    "answerable": true,
+    "gold_doc": "aurora_overview",
+    "gold_phrase": "Scribe"
+  },
+  {
+    "question": "What is the default efSearch value of the vector store?",
+    "answerable": true,
+    "gold_doc": "vector_store",
+    "gold_phrase": "96"
+  },
+  {
+    "question": "What caused error QF-5501 in the ingestion service?",
+    "answerable": true,
+    "gold_doc": "incident_log",
+    "gold_phrase": "version mismatch"
+  },
+  {
+    "question": "What is the target chunk length used by the ingestion pipeline?",
+    "answerable": true,
+    "gold_doc": "ingestion_pipeline",
+    "gold_phrase": "220"
+  },
+  {
+    "question": "Which rank fusion constant does the hybrid retrieval use?",
+    "answerable": true,
+    "gold_doc": "retrieval_api",
+    "gold_phrase": "c = 60"
+  },
+  {
+    "question": "How does the vector store handle deletions?",
+    "answerable": true,
+    "gold_doc": "vector_store",
+    "gold_phrase": "tombstone"
+  },
+  {
+    "question": "How many results does search_sources return by default?",
+    "answerable": true,
+    "gold_doc": "retrieval_api",
+    "gold_phrase": "defaults to 6"
+  },
+  {
+    "question": "Which model turns archived text passages into vectors?",
+    "answerable": true,
+    "gold_doc": "embedding_service",
+    "gold_phrase": "borealis-embed-v2"
+  },
+  {
+    "question": "At what time is the search index rebuilt each week?",
+    "answerable": true,
+    "gold_doc": "vector_store",
+    "gold_phrase": "03:00"
+  },
+  {
+    "question": "Who is the lead engineer of the AURORA project?",
+    "answerable": false,
+    "gold_doc": null,
+    "gold_phrase": null
+  },
+  {
+    "question": "How many GPUs does the embedding service run on?",
+    "answerable": false,
+    "gold_doc": null,
+    "gold_phrase": null
+  },
+  {
+    "question": "What does AURORA's managed cloud deployment cost per month?",
+    "answerable": false,
+    "gold_doc": null,
+    "gold_phrase": null
+  }
+]
