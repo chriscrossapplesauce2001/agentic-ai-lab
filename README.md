@@ -28,6 +28,13 @@ Work through them in order. Each one builds on the last.
 Each lab is a folder holding one notebook plus the data it needs. Open the
 notebook, not the folder.
 
+## Lecture Bot
+
+`LectureBot/lecture_bot.ipynb` is a chatbot you can ask questions about the
+lecture. It pastes the documents in `LectureBot/docs/` into the prompt in full,
+so you can see exactly what it knows. For now `docs/` holds the syllabus and
+the module description as placeholders.
+
 ## How to work
 
 1. Open a lab from the start page and run the cells from top to bottom.
