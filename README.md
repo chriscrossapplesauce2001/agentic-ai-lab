@@ -6,10 +6,12 @@ make one reliable, observable and safe.
 
 ## The labs
 
-Work through them in order. Each one builds on the last.
+Work through them in order. Each one builds on the last. New to language models?
+Start with Lab 00, an ungraded on-ramp.
 
 | | |
 |---|---|
+| **Lab 00** LLM Basics | What a language model is, tokens, and the chat call |
 | **Lab 01** Foundations | What counts as an agent, and a first model call |
 | **Lab 02** Agent Loop | The reason, act, observe cycle |
 | **Lab 03** Tools and MCP | Giving the agent tools, and the protocol behind them |
