@@ -4,10 +4,18 @@ Module infAgAI. Fourteen labs that build up an AI agent step by step: what an
 agent is, the loop that drives it, the tools it calls, and what it takes to
 make one reliable, observable and safe.
 
+## Start here
+
+Open `Onboarding/onboarding.ipynb` first. It walks you through requesting your
+personal Academic Cloud API key, which the labs need. Approval takes a while,
+so do it in the first week.
+
 ## The labs
 
-Work through them in order. Each one builds on the last. New to language models?
-Start with Lab 00, an ungraded on-ramp.
+Labs are unlocked one at a time over the semester, so this repo and the start
+page only show the labs released so far. Work through them in order: each one
+builds on the last. New to language models? Lab 00 is an ungraded on-ramp.
+The plan for the semester:
 
 | | |
 |---|---|
@@ -32,7 +40,7 @@ notebook, not the folder.
 
 ## Lecture Bot
 
-`LectureBot/lecture_bot.ipynb` is a chatbot you can ask questions about the
+Once it is unlocked, `LectureBot/lecture_bot.ipynb` is a chatbot you can ask questions about the
 lecture. It pastes the documents in `LectureBot/docs/` into the prompt in full,
 so you can see exactly what it knows. For now `docs/` holds the syllabus and
 the module description as placeholders.
@@ -45,8 +53,9 @@ the module description as placeholders.
 
 ## What runs where
 
-The language models run on the lab server, not on your laptop. There is
-nothing to install and no API key to enter. Everything happens in your browser.
+Everything happens in your browser: there is nothing to install. The language
+models run on the lab server and on the GWDG Academic Cloud. For the Academic
+Cloud you need your own API key (see Start here).
 
 Because everyone shares one server, a cell can take a few seconds longer when
 the lab is busy. That is normal.
