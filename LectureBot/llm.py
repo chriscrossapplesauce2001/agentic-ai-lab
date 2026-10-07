@@ -6,8 +6,9 @@ Both model servers speak the OpenAI API, so the same code reaches either:
                from the Onboarding notebook (saved in ~/.academic_cloud_key)
     spark      Ollama on the lab server, small models, no key
 
-With a saved key the labs use the Academic Cloud, otherwise the lab server.
-To force one, set LLM_BACKEND=academic or LLM_BACKEND=spark before importing.
+The labs use the Academic Cloud. There is no automatic fallback: without a
+saved key, every call stops with a message pointing to the Onboarding. To use
+the lab server instead, switch explicitly: set LLM_BACKEND=spark before importing.
 
 Responses are the plain OpenAI JSON, so what you learn here works with any
 OpenAI-compatible provider:
@@ -48,7 +49,7 @@ CONTEXT_LENGTH = {
     "qwen2.5:7b": 32_768,
 }
 
-BACKEND = os.environ.get("LLM_BACKEND") or ("academic" if KEY_FILE.exists() else "spark")
+BACKEND = os.environ.get("LLM_BACKEND", "academic")
 BASE_URL = BACKENDS[BACKEND]["base_url"]
 CHAT_MODEL = BACKENDS[BACKEND]["chat_model"]
 EMBED_MODEL = BACKENDS[BACKEND]["embed_model"]
@@ -58,7 +59,7 @@ def _post(path, body, retries=3):
     headers = {"Content-Type": "application/json"}
     if BACKEND == "academic":
         if not KEY_FILE.exists():
-            raise RuntimeError("No API key saved. Run the Onboarding notebook first.")
+            raise RuntimeError(NO_KEY)
         headers["Authorization"] = f"Bearer {KEY_FILE.read_text().strip()}"
     request = urllib.request.Request(BASE_URL + path, data=json.dumps(body).encode(), headers=headers)
     for attempt in range(retries + 1):
@@ -113,4 +114,9 @@ def context_length(model=None):
     return CONTEXT_LENGTH.get(model or CHAT_MODEL)
 
 
+NO_KEY = ("No Academic Cloud API key saved. Run the Onboarding notebook "
+          "(Onboarding/onboarding.ipynb), Steps 1 to 3, then restart this notebook.")
+
 print(f"llm: using {BACKEND} ({BASE_URL}), chat model {CHAT_MODEL}")
+if BACKEND == "academic" and not KEY_FILE.exists():
+    print(f"llm: WARNING: {NO_KEY}")
