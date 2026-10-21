@@ -1,14 +1,14 @@
 """One small client for every lab: chat, raw completion and embeddings.
 
-Both model servers speak the OpenAI API, so the same code reaches either:
+The models run on the GWDG Academic Cloud (Chat AI), which speaks the OpenAI API.
+You need your API key from the Onboarding notebook (saved in ~/.academic_cloud_key).
 
-    academic   GWDG Academic Cloud (Chat AI), large models, needs your API key
-               from the Onboarding notebook (saved in ~/.academic_cloud_key)
-    spark      Ollama on the lab server, small models, no key
+The models:
 
-The labs use the Academic Cloud. There is no automatic fallback: without a
-saved key, every call stops with a message pointing to the Onboarding. To use
-the lab server instead, switch explicitly: set LLM_BACKEND=spark before importing.
+    MODEL         qwen3-30b-a3b-instruct-2507, answers directly. Used by chat().
+    THINK_MODEL   qwen3.6-35b-a3b, a reasoning model: thinks first, then answers.
+                  Used by chat(..., think=True); the thinking is in message["reasoning"].
+    EMBED_MODEL   qwen3-embedding-4b, turns text into vectors for search (RAG).
 
 Responses are the plain OpenAI JSON, so what you learn here works with any
 OpenAI-compatible provider:
@@ -16,62 +16,33 @@ OpenAI-compatible provider:
     response = chat([{"role": "user", "content": "Hi"}])
     response["choices"][0]["message"]["content"]   # the reply
     response["usage"]["prompt_tokens"]             # tokens the model read
-
-Reasoning models (REASONING_MODEL) return their thinking separately, in
-response["choices"][0]["message"]["reasoning"].
 """
 
 import json
-import os
 import time
 import urllib.error
 import urllib.request
 from pathlib import Path
 
+BASE_URL = "https://chat-ai.academiccloud.de/v1"
+MODEL = "qwen3-30b-a3b-instruct-2507"
+THINK_MODEL = "qwen3.6-35b-a3b"
+EMBED_MODEL = "qwen3-embedding-4b"
+CONTEXT_LENGTH = 262_144   # tokens MODEL and THINK_MODEL can read at once
 KEY_FILE = Path.home() / ".academic_cloud_key"
+MAX_WAIT = 60              # longest rate-limit wait (seconds) before giving up with a message
 
-BACKENDS = {
-    "academic": {
-        "base_url": "https://chat-ai.academiccloud.de/v1",
-        "chat_model": "qwen3-30b-a3b-instruct-2507",
-        "reasoning_model": "qwen3.6-35b-a3b",
-        "embed_model": "qwen3-embedding-4b",
-    },
-    "spark": {
-        "base_url": "http://localhost:11434/v1",
-        "chat_model": "qwen2.5:7b",
-        "reasoning_model": "deepseek-r1:7b",
-        "embed_model": "qwen3-embedding:0.6b",
-    },
-}
-
-# Context window per model, in tokens (from the providers' model docs).
-CONTEXT_LENGTH = {
-    "qwen3-30b-a3b-instruct-2507": 262_144,
-    "openai-gpt-oss-120b": 131_072,
-    "qwen3.8-27b": 262_144,
-    "qwen3.6-35b-a3b": 262_144,
-    "meta-llama-3.1-8b-instruct": 131_072,
-    "qwen2.5:7b": 32_768,
-}
-
-BACKEND = os.environ.get("LLM_BACKEND", "academic")
-# Longest rate-limit wait (seconds) llm.py sits out before giving up with a message.
-MAX_WAIT = int(os.environ.get("LLM_MAX_WAIT", "60"))
-BASE_URL = BACKENDS[BACKEND]["base_url"]
-CHAT_MODEL = BACKENDS[BACKEND]["chat_model"]            # everyday model for the labs
-REASONING_MODEL = BACKENDS[BACKEND]["reasoning_model"]  # thinks first; trace in message["reasoning"]
-EMBED_MODEL = BACKENDS[BACKEND]["embed_model"]
+NO_KEY = ("No Academic Cloud API key saved. Run the Onboarding notebook "
+          "(Onboarding/onboarding.ipynb), Steps 1 to 3, then restart this notebook.")
 
 
 def _post(path, body=None, retries=5):
     """POST body to the server (GET when body is None), retrying on rate limits
     and on short server hiccups."""
-    headers = {"Content-Type": "application/json"}
-    if BACKEND == "academic":
-        if not KEY_FILE.exists():
-            raise RuntimeError(NO_KEY)
-        headers["Authorization"] = f"Bearer {KEY_FILE.read_text().strip()}"
+    if not KEY_FILE.exists():
+        raise RuntimeError(NO_KEY)
+    headers = {"Content-Type": "application/json",
+               "Authorization": f"Bearer {KEY_FILE.read_text().strip()}"}
     data = None if body is None else json.dumps(body).encode()
     request = urllib.request.Request(BASE_URL + path, data=data, headers=headers)
     for attempt in range(retries + 1):
@@ -96,33 +67,22 @@ def _post(path, body=None, retries=5):
                 time.sleep(2 ** attempt)   # 1, 2, 4, 8, 16 s
                 continue
             detail = error.read().decode(errors="replace")[:300]
-            raise RuntimeError(f"{BACKEND} answered HTTP {error.code}: {detail}") from None
+            raise RuntimeError(f"Academic Cloud answered HTTP {error.code}: {detail}") from None
 
 
-def chat(messages, model=None, **options):
+def chat(messages, model=None, think=False, **options):
     """Send a conversation, get the model's reply as OpenAI JSON.
 
-    options are passed through, e.g. temperature=0, max_tokens=200, tools=[...].
+    think=True uses THINK_MODEL, which reasons before answering (slower, often better
+    on hard tasks). options are passed through, e.g. temperature=0, max_tokens=200, tools=[...].
     """
-    return _post("/chat/completions", {"model": model or CHAT_MODEL, "messages": messages, **options})
+    model = model or (THINK_MODEL if think else MODEL)
+    return _post("/chat/completions", {"model": model, "messages": messages, **options})
 
 
 def complete(prompt, model=None, **options):
     """Continue plain text: no chat template, the model reads exactly `prompt`."""
-    if BACKEND == "spark":
-        # Ollama's /v1/completions wraps the prompt in the chat template anyway;
-        # only its native endpoint has a raw mode. Reshaped into OpenAI JSON.
-        if "max_tokens" in options:
-            options["num_predict"] = options.pop("max_tokens")
-        request = urllib.request.Request(
-            BASE_URL.removesuffix("/v1") + "/api/generate",
-            data=json.dumps({"model": model or CHAT_MODEL, "prompt": prompt, "raw": True,
-                             "stream": False, "options": options}).encode())
-        with urllib.request.urlopen(request, timeout=300) as response:
-            r = json.load(response)
-        return {"choices": [{"text": r["response"], "finish_reason": r.get("done_reason")}],
-                "usage": {"prompt_tokens": r["prompt_eval_count"], "completion_tokens": r["eval_count"]}}
-    return _post("/completions", {"model": model or CHAT_MODEL, "prompt": prompt, **options})
+    return _post("/completions", {"model": model or MODEL, "prompt": prompt, **options})
 
 
 def embed(texts, model=None):
@@ -136,14 +96,6 @@ def models():
     return sorted(m["id"] for m in _post("/models")["data"])
 
 
-def context_length(model=None):
-    """The model's context window in tokens, or None if unknown."""
-    return CONTEXT_LENGTH.get(model or CHAT_MODEL)
-
-
-NO_KEY = ("No Academic Cloud API key saved. Run the Onboarding notebook "
-          "(Onboarding/onboarding.ipynb), Steps 1 to 3, then restart this notebook.")
-
-print(f"llm: using {BACKEND} ({BASE_URL}), chat model {CHAT_MODEL}")
-if BACKEND == "academic" and not KEY_FILE.exists():
+print(f"llm: using the Academic Cloud, model {MODEL}")
+if not KEY_FILE.exists():
     print(f"llm: WARNING: {NO_KEY}")
