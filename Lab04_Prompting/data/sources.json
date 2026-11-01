@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "url": "stat-office.example.gov/energy-report-2025",
+    "title": "Electricity Generation in Germany, Jan-Oct 2025",
+    "author": "Federal Statistical Office (synthetic)",
+    "date": "2025-11-04",
+    "text": "In the first ten months of 2025, renewable sources supplied 54.2% of German electricity generation, up from 51.6% in the same period of 2024. Wind power contributed 27.1%, photovoltaics 14.8%, biomass 8.3%, and hydropower 4.0%. Net electricity exports fell by 6% year on year. Methodology: plant-level metering data reported under the Energy Statistics Act; provisional figures, revision expected in March 2026."
+  },
+  {
+    "id": 1,
+    "url": "arxiv.example.org/abs/2408.01234",
+    "title": "Grid Flexibility Requirements under High Solar Penetration: A German Case Study",
+    "author": "L. Berger and T. Okafor",
+    "date": "2024-08-19",
+    "text": "We model the German grid under photovoltaic shares of 15-25% of annual generation. Our simulations indicate that curtailment rises non-linearly above 18% PV share unless storage capacity grows by at least 2.5 GW per year. Preprint, not yet peer reviewed. Code and data are available in the supplementary repository."
+  },
+  {
+    "id": 2,
+    "url": "energy-truth-now.example.blog/must-read",
+    "title": "The SHOCKING truth about wind power nobody tells you",
+    "author": null,
+    "date": null,
+    "text": "Everyone is celebrating renewables but insiders know the grid is on the brink of collapse!!! A friend who works at a utility told me blackouts are being covered up. Wind turbines allegedly use more energy than they produce - do your own research. Share this before it gets deleted!"
+  },
+  {
+    "id": 3,
+    "url": "daily-chronicle.example.com/2023/energy-mix",
+    "title": "Renewables reach record share of German power mix",
+    "author": "M. Petersen, Daily Chronicle",
+    "date": "2023-12-28",
+    "text": "Renewable sources covered about 52% of German electricity consumption in 2023, the grid agency said on Thursday, a record driven by strong wind output in autumn and lower overall demand. Officials cautioned that grid expansion continues to lag behind targets."
+  },
+  {
+    "id": 4,
+    "url": "greenvolt.example.com/whitepaper",
+    "title": "Why GreenVolt Home Batteries Are the Key to the Energy Transition",
+    "author": "GreenVolt Marketing Team",
+    "date": "2025-06-02",
+    "text": "Independent studies agree: home storage is the single most important technology of the decade. With a GreenVolt battery, households cut their bills by up to 70% and make the grid 100% blackout-proof. Order before July and receive our exclusive energy independence kit."
+  },
+  {
+    "id": 5,
+    "url": "open-energy-wiki.example.org/Germany_electricity",
+    "title": "Electricity sector in Germany (community wiki)",
+    "author": null,
+    "date": "2025-03-11",
+    "text": "Germany's electricity mix has shifted markedly toward renewables since 2000. The renewable share of gross generation passed 50% for the first time in 2023 [citation needed]. The largest renewable source is wind power. This article may contain outdated figures; please help by updating it with primary sources."
+  }
+]
