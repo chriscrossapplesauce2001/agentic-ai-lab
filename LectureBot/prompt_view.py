@@ -48,12 +48,11 @@ def _block(kind, title, meta, text, delay):
 
 def show_prompt(last):
     """Replay the call stored in `last`, block by block, in the order the model read it."""
-    num_ctx = llm.context_length(last["model"])
     system, *turns = last["messages"]
     instructions = system["content"].split("\n\n=== ", 1)[0]
     rag = last["mode"] == "rag"
 
-    parts, step = [], 0.35
+    parts = []
     parts.append(("instructions", "System: instructions", f"~{len(instructions) // 4} tokens", instructions))
     for name, text, score in last["sources"]:
         meta = f"similarity {score:.2f}" if rag else "whole document"
@@ -63,6 +62,7 @@ def show_prompt(last):
         parts.append(("history", f"Earlier {msg['role']}", preview, msg["content"]))
     parts.append(("question", "User: your question", "", turns[-1]["content"]))
 
+    step = min(0.35, 4 / len(parts))   # stuffing sends hundreds of pages: keep the replay short
     html = [CSS, '<div class="pv">']
     for i, (kind, title, meta, text) in enumerate(parts):
         html.append(_block(kind, title, meta, text, i * step))
@@ -72,12 +72,12 @@ def show_prompt(last):
     html.append(
         f'<div class="pv-model" style="animation-delay:{t:.2f}s">'
         f"&darr; {escape(last['model'])} reads {used} tokens "
-        f"({len(last['sources'])} {'retrieved chunks' if rag else 'whole documents'}), "
-        + (f"its maximum is {num_ctx}" if num_ctx else "its maximum is unknown") + "</div>"
+        f"({len(last['sources'])} {'pages found by the search' if rag else 'pages, all of them'}), "
+        f"its maximum is {llm.CONTEXT_LENGTH:,}</div>"
     )
     html.append(
         f'<div class="pv-bar" style="animation-delay:{t:.2f}s">'
-        f'<div class="pv-fill" style="--pv-width:{min(100, 100 * used / (num_ctx or used)):.1f}%;'
+        f'<div class="pv-fill" style="--pv-width:{min(100, 100 * used / llm.CONTEXT_LENGTH):.1f}%;'
         f'animation-delay:{t + .3:.2f}s"></div></div>'
     )
     html.append(_block("answer", "Assistant: answer", "", last["answer"], t + 1.5))
