@@ -16,9 +16,16 @@ OpenAI-compatible provider:
     response = chat([{"role": "user", "content": "Hi"}])
     response["choices"][0]["message"]["content"]   # the reply
     response["usage"]["prompt_tokens"]             # tokens the model read
+
+Emergency fallback: if the Academic Cloud cannot be used, the calls go to a smaller
+model on the lab server itself instead, and llm prints one line saying so.
+This happens only without a saved key, when the Academic Cloud rejects the key
+(HTTP 401), or after 3 failed calls in a row (no connection, timeout, server error).
+The request limit (HTTP 429) never switches. backend() says where calls go now.
 """
 
 import json
+import os
 import time
 import urllib.error
 import urllib.request
@@ -32,19 +39,60 @@ CONTEXT_LENGTH = 262_144   # tokens MODEL and THINK_MODEL can read at once
 KEY_FILE = Path.home() / ".academic_cloud_key"
 MAX_WAIT = 60              # longest rate-limit wait (seconds) before giving up with a message
 
+# The fallback: Ollama on the lab server itself (the hub's Spark), localhost only
+# (instructor/llm/README.md). Every chat or completion model name maps to SPARK_MODEL
+# (context 16,384 tokens); it thinks only when the cloud name was THINK_MODEL.
+# Every embedding model name maps to SPARK_EMBED_MODEL.
+SPARK_URL = "http://127.0.0.1:11434"
+SPARK_MODEL = "qwen3:8b"
+SPARK_EMBED_MODEL = "qwen3-embedding:0.6b"
+FAILURES = 3               # failed cloud calls in a row before the switch
+SWITCHED = ("llm: Academic Cloud not reachable (or no API key). Using the lab server's "
+            f"fallback model {SPARK_MODEL} for this session. Results may differ.")
+
 NO_KEY = ("No Academic Cloud API key saved. Run the Onboarding notebook "
           "(Onboarding/onboarding.ipynb), Steps 1 to 3, then restart this notebook.")
 
+FORCED = os.environ.get("LLM_BACKEND") or None   # "cloud" or "spark" pins the backend (tests)
+if FORCED not in (None, "cloud", "spark"):
+    raise ValueError(f"LLM_BACKEND must be 'cloud' or 'spark', not {FORCED!r}")
+_switched = False  # True once this session moved to the Spark
+_failures = 0      # failed cloud calls in a row
+_said = None       # the status line printed last
 
-def _post(path, body=None, retries=5):
-    """POST body to the server (GET when body is None), retrying on rate limits
-    and on short server hiccups."""
-    if not KEY_FILE.exists():
-        raise RuntimeError(NO_KEY)
-    headers = {"Content-Type": "application/json",
-               "Authorization": f"Bearer {KEY_FILE.read_text().strip()}"}
+
+class _Down(Exception):
+    """No connection, no answer in time, or a server error (HTTP 5xx) after the retries."""
+
+
+def backend():
+    """Where the next call goes: "cloud" (Academic Cloud) or "spark" (the lab's fallback)."""
+    if FORCED:
+        return FORCED
+    return "spark" if _switched or not KEY_FILE.exists() else "cloud"
+
+
+def _status():
+    if backend() == "cloud":
+        return f"llm: using the Academic Cloud, model {MODEL}"
+    if FORCED:
+        return f"llm: LLM_BACKEND=spark, using the lab server's fallback model {SPARK_MODEL}"
+    return SWITCHED
+
+
+def _say_status():
+    """Print the status line once each time the backend changes."""
+    global _said
+    if _status() != _said:
+        _said = _status()
+        print(_said)
+
+
+def _send(url, body, headers, retries):
+    """POST body (GET when body is None), retrying on rate limits, server hiccups and lost
+    connections. Raises _Down when the server cannot be used, HTTPError for other errors."""
     data = None if body is None else json.dumps(body).encode()
-    request = urllib.request.Request(BASE_URL + path, data=data, headers=headers)
+    request = urllib.request.Request(url, data=data, headers=headers)
     for attempt in range(retries + 1):
         try:
             with urllib.request.urlopen(request, timeout=300) as response:
@@ -66,8 +114,84 @@ def _post(path, body=None, retries=5):
             if 500 <= error.code <= 504 and attempt < retries:
                 time.sleep(2 ** attempt)   # 1, 2, 4, 8, 16 s
                 continue
-            detail = error.read().decode(errors="replace")[:300]
-            raise RuntimeError(f"Academic Cloud answered HTTP {error.code}: {detail}") from None
+            if error.code >= 500:
+                raise _Down(f"HTTP {error.code}: {error.read().decode(errors='replace')[:300]}") from None
+            raise
+        except TimeoutError:
+            raise _Down("no answer within 300 s") from None
+        except OSError as error:   # no connection (URLError and friends)
+            reason = getattr(error, "reason", error)
+            if isinstance(reason, TimeoutError):
+                raise _Down("no answer within 300 s") from None
+            if attempt < retries:
+                time.sleep(2 ** attempt)
+                continue
+            raise _Down(f"no connection: {reason}") from None
+
+
+def _post(path, body=None, retries=5):
+    """Send one request to the backend in use, switching to the Spark when the cloud cannot be used."""
+    global _failures, _switched
+    _say_status()
+    if backend() == "spark":
+        return _spark(path, body, retries)
+    if not KEY_FILE.exists():
+        raise RuntimeError(NO_KEY)   # only with LLM_BACKEND=cloud
+    headers = {"Content-Type": "application/json",
+               "Authorization": f"Bearer {KEY_FILE.read_text().strip()}"}
+    try:
+        result = _send(BASE_URL + path, body, headers, retries)
+    except _Down as down:
+        _failures += 1
+        if _failures >= FAILURES and not FORCED:
+            _switched = True
+            return _post(path, body, retries)
+        raise RuntimeError(f"Academic Cloud not reachable ({down}). Try again in a minute."
+                           + ("" if FORCED else f" After {FAILURES} failed calls in a row, "
+                              "llm switches to the lab's fallback model.")) from None
+    except urllib.error.HTTPError as error:
+        _failures = 0
+        if error.code == 401 and not FORCED:
+            _switched = True
+            return _post(path, body, retries)
+        detail = error.read().decode(errors="replace")[:300]
+        raise RuntimeError(f"Academic Cloud answered HTTP {error.code}: {detail}") from None
+    _failures = 0
+    return result
+
+
+def _spark(path, body, retries):
+    """The same request to Ollama on the lab server, with the cloud model names mapped to its models."""
+    if path == "/models":
+        return {"object": "list", "data": [{"id": SPARK_MODEL}, {"id": SPARK_EMBED_MODEL}]}
+    body = dict(body)
+    thinks = body.get("model") == THINK_MODEL
+    body["model"] = SPARK_EMBED_MODEL if path == "/embeddings" else SPARK_MODEL
+    if path == "/chat/completions" and not thinks:
+        body.setdefault("reasoning_effort", "none")   # qwen3 thinks unless told not to
+    headers = {"Content-Type": "application/json"}
+    try:
+        if path != "/completions":
+            return _send(SPARK_URL + "/v1" + path, body, headers, retries)
+        # Ollama's /v1/completions wraps the prompt in the chat template anyway; only its
+        # native endpoint has a raw mode (think=False keeps <think> in the text, unparsed).
+        # The answer is reshaped into OpenAI JSON.
+        options = {k: v for k, v in body.items() if k not in ("model", "prompt")}
+        if "max_tokens" in options:
+            options["num_predict"] = options.pop("max_tokens")
+        r = _send(SPARK_URL + "/api/generate", {"model": SPARK_MODEL, "prompt": body["prompt"],
+                  "raw": True, "think": False, "stream": False, "options": options}, headers, retries)
+        return {"object": "text_completion", "model": SPARK_MODEL,
+                "choices": [{"index": 0, "text": r["response"], "finish_reason": r.get("done_reason")}],
+                "usage": {"prompt_tokens": r.get("prompt_eval_count", 0),
+                          "completion_tokens": r.get("eval_count", 0),
+                          "total_tokens": r.get("prompt_eval_count", 0) + r.get("eval_count", 0)}}
+    except _Down as down:
+        raise RuntimeError(f"The lab's fallback model is not reachable either ({down}). "
+                           "Please ask the lab staff.") from None
+    except urllib.error.HTTPError as error:
+        detail = error.read().decode(errors="replace")[:300]
+        raise RuntimeError(f"The lab's fallback model answered HTTP {error.code}: {detail}") from None
 
 
 def chat(messages, model=None, think=False, **options):
@@ -96,6 +220,6 @@ def models():
     return sorted(m["id"] for m in _post("/models")["data"])
 
 
-print(f"llm: using the Academic Cloud, model {MODEL}")
-if not KEY_FILE.exists():
+_say_status()
+if FORCED == "cloud" and not KEY_FILE.exists():
     print(f"llm: WARNING: {NO_KEY}")
