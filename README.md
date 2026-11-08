@@ -40,10 +40,11 @@ notebook, not the folder.
 
 ## Lecture Bot
 
-Once it is unlocked, `LectureBot/lecture_bot.ipynb` is a chatbot you can ask questions about the
-lecture. It pastes the documents in `LectureBot/docs/` into the prompt in full,
-so you can see exactly what it knows. For now `docs/` holds the syllabus and
-the module description as placeholders.
+`LectureBot/lecture_bot.ipynb` is a chatbot you can ask about the lecture. It
+answers from the documents in `LectureBot/docs/` (the slides of all 14
+sessions, the teaching units and the module description): either it pastes
+all of them into the prompt in full, or a search picks the few pages closest
+to your question (RAG). It shows you exactly what the model received.
 
 ## How to work
 
